@@ -3,60 +3,847 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مطعم السعودي | بورتسودان</title>
-<meta name="description" content="مطعم السعودي في سلالاب، بورتسودان. وجبات سودانية شعبية وقائمة الهدافين.">
+
+<title>مطعم السعودي | سلالاب - بورتسودان</title>
+
+<meta name="description" content="مطعم السعودي في سلالاب، بورتسودان. أشهى المأكولات السودانية الشعبية بأسعار مناسبة.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
- --gold:#edbd59;
- --dark:#151914;
- --green:#263e2d;
- --cream:#fff9ef;
- --copper:#b96d3e;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #ffe7a0;
+  --black: #101010;
+  --dark: #191919;
+  --white: #ffffff;
+  --muted: #bdbdbd;
 }
-html{scroll-behavior:smooth}
-body{
- font-family:Tahoma,Arial,sans-serif;
- background:var(--cream);
- color:#292720;
- line-height:1.8;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-header{
- background:#151914;color:white;padding:15px 5%;
- display:flex;justify-content:space-between;align-items:center;
- flex-wrap:wrap;gap:12px;
- border-bottom:2px solid var(--gold);
+
+html {
+  scroll-behavior: smooth;
 }
-.logo{font-size:24px;font-weight:bold;color:var(--gold)}
-nav{display:flex;flex-wrap:wrap;gap:14px}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:var(--gold)}
-.hero{
- min-height:390px;
- background:linear-gradient(90deg,#111c14e8,#17261bd9),
- url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85");
- background-size:cover;background-position:center;
- color:white;text-align:center;padding:85px 20px;
- display:flex;flex-direction:column;justify-content:center;align-items:center;
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.8;
 }
-.hero h1{color:var(--gold);font-size:clamp(36px,7vw,58px);margin-bottom:12px}
-.hero p{font-size:18px;max-width:650px;margin-bottom:22px}
-.button{
- display:inline-block;background:var(--gold);color:#191919;
- text-decoration:none;font-weight:bold;padding:11px 23px;
- border-radius:8px;margin:5px;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.whatsapp{background:#20b967;color:white}
-section{padding:52px 6%}
-.title{text-align:center;color:var(--green);font-size:31px;margin-bottom:8px}
-.subtitle{text-align:center;color:#777;margin-bottom:28px}
-.menu{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:22px;
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
 }
-.card{
- background:white;border-radius:14px;overflow:hidden;
- box-shadow:0 5px 20px #00000010;border:1px solid #eee5d7;
+
+header {
+  background: rgba(12, 12, 12, 0.97);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.card img{width:100%;height:175px;object-fit:cover
+
+.navbar {
+  min-height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+}
+
+.hero-content {
+  width: 100%;
+  padding: 70px 0;
+}
+
+.hero-label {
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 62px);
+  line-height: 1.4;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #eeeeee;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-weight: 800;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+section {
+  padding: 65px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  color: var(--gold);
+  font-size: clamp(26px, 4vw, 38px);
+  margin-bottom: 8px;
+}
+
+.section-title p {
+  color: var(--muted);
+}
+
+.info-strip {
+  background: #1b1b1b;
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+  padding: 25px 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: center;
+}
+
+.info-item {
+  padding: 12px;
+}
+
+.info-item strong {
+  display: block;
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.info-item span {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--dark);
+  border: 1px solid #333;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.12);
+}
+
+.card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card h3 {
+  color: var(--gold);
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.price {
+  color: var(--gold-light);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.price small {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.order-btn {
+  display: block;
+  margin-top: 13px;
+  padding: 8px;
+  border-radius: 7px;
+  background: #252525;
+  border: 1px solid var(--gold);
+  text-align: center;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.order-btn:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.note {
+  margin-top: 25px;
+  padding: 15px;
+  border-right: 4px solid var(--gold);
+  background: #1c1c1c;
+  color: #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* قسم قائمة الهدافين */
+
+.leaderboard-section {
+  background: #151515;
+}
+
+.leaderboard-banner {
+  min-height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 30px;
+  background:
+    linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.85)),
+    url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1400&q=80')
+    center/cover no-repeat;
+  border: 1px solid #49402b;
+}
+
+.leaderboard-banner h2 {
+  color: var(--gold-light);
+  font-size: clamp(30px, 5vw, 46px);
+}
+
+.leaderboard-banner p {
+  color: #fff;
+  margin-top: 8px;
+}
+
+.leaderboard {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  gap: 12px;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 18px;
+  background: #222;
+  border: 1px solid #3b3b3b;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.player:hover {
+  transform: translateX(-4px);
+  border-color: var(--gold);
+}
+
+.rank {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #343434;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.player-name {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.player-label {
+  margin-right: auto;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, #fff0a6, #d4af37, #9a7412);
+  color: #251900;
+  border: 2px solid #ffe9a0;
+  box-shadow: 0 0 15px rgba(212,175,55,0.35);
+}
+
+.player.first {
+  background: linear-gradient(90deg, #302710, #211d12);
+  border-color: var(--gold);
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #f2f2f2, #a6a6a6);
+  color: #222;
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #e9b17d, #9b5b32);
+  color: #211008;
+}
+
+.rank-8 {
+  background: linear-gradient(135deg, #cd8b52, #85451f, #583016);
+  color: white;
+  border: 2px solid #d49a68;
+}
+
+.player.last {
+  border-color: #8b5836;
+}
+
+/* من نحن */
+
+.about-box {
+  max-width: 850px;
+  margin: auto;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 14px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.about-box p {
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+/* التواصل */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: #1c1c1c;
+  padding: 25px 18px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-card .icon {
+  font-size: 35px;
+  margin-bottom: 8px;
+}
+
+.contact-card h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.contact-card p {
+  color: #ddd;
+  overflow-wrap: anywhere;
+}
+
+.contact-card .btn {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  background: #080808;
+  border-top: 1px solid #333;
+  padding: 28px 15px;
+}
+
+footer h2 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+footer p {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: white;
+  font-size: 29px;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 10px 15px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .hero {
+    min-height: 450px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  section {
+    padding: 45px 0;
+  }
+
+  .player {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .player-name {
+    font-size: 15px;
+  }
+
+  .player-label {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a class="logo" href="#home">🍽️ مطعم السعودي</a>
+
+    <nav class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#menu">قائمة الطعام</a>
+      <a href="#leaders">قائمة الهدافين</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="hero-label">أهلاً بكم في مطعم السعودي</span>
+
+    <h1>الطعم السوداني الأصيل</h1>
+
+    <p>
+      نكهة بلدنا في كل لقمة ❤️
+      أكلات شعبية لذيذة، أجواء جميلة، وأسعار تناسب الجميع.
+      زورونا في سلالاب، بورتسودان.
+    </p>
+
+    <a href="#menu" class="btn">🍛 اكتشف قائمة الطعام</a>
+
+    <a
+      href="https://wa.me/249962037599"
+      class="btn btn-outline"
+      target="_blank"
+      rel="noopener"
+    >اطلب عبر واتساب</a>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="container info-grid">
+
+    <div class="info-item">
+      <strong>📍 موقعنا</strong>
+      <span>سلالاب - بورتسودان</span>
+    </div>
+
+    <div class="info-item">
+      <strong>💰 أسعار مناسبة</strong>
+      <span>أصناف بأسعار لا تتجاوز 6000 جنيه</span>
+    </div>
+
+    <div class="info-item">
+      <strong>❤️ نكهة سودانية</strong>
+      <span>أكل شعبي ولمّة أحباب</span>
+    </div>
+
+  </div>
+</div>
+
+<section id="menu">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🍲 قائمة الطعام</h2>
+      <p>اختار وجبتك المفضلة واستمتع بالطعم الأصيل</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="وجبة عدس"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>عدس</h3>
+          <p>عدس ساخن ولذيذ مناسب للفطور.</p>
+          <div class="price">1500 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20عدس" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="فتة بوش"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>فتة بوش</h3>
+          <p>من الأكلات الشعبية المحبوبة.</p>
+          <div class="price">2500 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20فتة%20بوش" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="فول سوداني"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>فول</h3>
+          <p>فطور سوداني بسيط ومشبع.</p>
+          <div class="price">1500 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20فول" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="طعمية"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>طعمية</h3>
+          <p>طعمية مقرمشة مناسبة للفطور.</p>
+          <div class="price">1000 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20طعمية" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80"
+          alt="سلطة طازجة"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>سلطة</h3>
+          <p>سلطة طازجة تكمل وجبتك.</p>
+          <div class="price">1000 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20سلطة" target="_blank" rel="noopener">اطلب الآن</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+          alt="وجبة شعبية"
+          loading="lazy"
+        >
+        <div class="card-content">
+          <h3>وجبة شعبية</h3>
+          <p>وجبات بطابع سوداني أصيل.</p>
+          <div class="price">4000 <small>جنيه سوداني</small></div>
+          <a class="order-btn" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20معرفة%20الوجبات%20الشعبية%20المتاحة" target="_blank" rel="noopener">استفسر الآن</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      📌 الأسعار المعروضة قابلة للتعديل حسب أسعار المطعم الفعلية.
+      يرجى التأكد من الأسعار والتوفر قبل اعتماد القائمة النهائية.
+    </div>
+
+  </div>
+</section>
+
+<section class="leaderboard-section" id="leaders">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>🏆 قائمة الهدافين</h2>
+      <p>أبطال اللمّة وروح الشباب السوداني</p>
+    </div>
+
+    <div class="leaderboard-banner">
+      <div>
+        <h2>لمة شباب السعودي ❤️</h2>
+        <p>الصحبة الحلوة والفطور السوداني الأصيل</p>
+      </div>
+    </div>
+
+    <div class="leaderboard">
+
+      <div class="player first">
+        <div class="rank rank-1">1</div>
+        <div class="player-name">محمد اسامة</div>
+        <div class="player-label">🥇 المركز الأول</div>
+      </div>
+
+      <div class="player">
+        <div class="rank rank-2">2</div>
+        <div class="player-name">احمد لطفي</div>
+        <div class="player-label">🥈 المركز الثاني</div>
+      </div>
+
+      <div class="player">
+        <div class="rank rank-3">3</div>
+        <div class="player-name">مروان</div>
+        <div class="player-label">🥉 المركز الثالث</div>
+      </div>
+
+      <div class="player">
+        <div class="rank">4</div>
+        <div class="player-name">عبودي</div>
+        <div class="player-label">المركز الرابع</div>
+      </div>
+
+      <div class="player">
+        <div class="rank">5</div>
+        <div class="player-name">معاوية</div>
+        <div class="player-label">المركز الخامس</div>
+      </div>
+
+      <div class="player">
+        <div class="rank">6</div>
+        <div class="player-name">اسعد</div>
+        <div class="player-label">المركز السادس</div>
+      </div>
+
+      <div class="player">
+        <div class="rank">7</div>
+        <div class="player-name">دكين</div>
+        <div class="player-label">المركز السابع</div>
+      </div>
+
+      <div class="player last">
+        <div class="rank rank-8">8</div>
+        <div class="player-name">محمد علي</div>
+        <div class="player-label">المركز الثامن</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>عن مطعم السعودي</h2>
+      <p>أكل سوداني ولمّة تجمع الأحباب</p>
+    </div>
+
+    <div class="about-box">
+      <p>
+        مطعم السعودي وجهة لمحبي الأكلات الشعبية السودانية
+        في سلالاب بمدينة بورتسودان.
+      </p>
+
+      <p>
+        هدفنا تقديم تجربة بسيطة ومميزة تجمع بين الطعم الطيب
+        والأسعار المناسبة والأجواء الودية.
+      </p>
+
+      <p>
+        نرحب بكم ونسعد بزيارتكم وطلباتكم.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>📞 تواصل معنا</h2>
+      <p>نحن في انتظار زيارتكم وطلباتكم</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h3>عنوان المطعم</h3>
+        <p>سلالاب - بورتسودان - السودان</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">📱</div>
+        <h3>اتصل بنا</h3>
+        <p dir="ltr">+249 96 203 7599</p>
+        <a class="btn" href="tel:+249962037599">اتصال مباشر</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">💬</div>
+        <h3>واتساب</h3>
+        <p>للطلب والاستفسار</p>
+        <a
+          class="btn"
+          href="https://wa.me/249962037599"
+          target="_blank"
+          rel="noopener"
+        >راسلنا الآن</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h2>مطعم السعودي 🍽️</h2>
+  <p>الطعم السوداني الأصيل في سلالاب - بورتسودان</p>
+  <p>© 2026 مطعم السعودي - جميع الحقوق محفوظة</p>
+</footer>
+
+<a
+  class="whatsapp-float"
+  href="https://wa.me/249962037599"
+  target="_blank"
+  rel="noopener"
+  aria-label="تواصل معنا عبر واتساب"
+>☏</a>
+
+</body>
+ </html>
