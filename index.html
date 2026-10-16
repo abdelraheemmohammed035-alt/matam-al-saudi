@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مطعم السعودي | مذاق أصيل</title>
+
+<title>مطعم السعودي | بورتسودان</title>
+<meta name="description" content="مطعم السعودي في سلالاب، بورتسودان. وجبات سودانية شعبية وطلبات عبر واتساب.">
 
 <style>
 * {
@@ -12,79 +14,102 @@
     padding: 0;
 }
 
+:root {
+    --gold: #e8b65c;
+    --dark: #151a17;
+    --cream: #fff9ee;
+    --green: #244332;
+}
+
 body {
     font-family: Tahoma, Arial, sans-serif;
-    background: #fffaf2;
-    color: #252525;
+    background: var(--cream);
+    color: #242424;
     line-height: 1.8;
 }
 
 header {
-    background: #17251c;
+    background: var(--dark);
     color: white;
-    padding: 18px 6%;
+    padding: 15px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .logo {
+    color: var(--gold);
     font-size: 25px;
     font-weight: bold;
-    color: #e9bd72;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 8px;
+    font-size: 14px;
 }
 
 .hero {
-    min-height: 390px;
-    background: linear-gradient(135deg, #17251c, #40513a);
+    background:
+      linear-gradient(90deg, rgba(12,20,15,.88), rgba(12,20,15,.62)),
+      url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 75px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: clamp(34px, 7vw, 55px);
-    color: #f3cc88;
+    color: var(--gold);
+    font-size: clamp(35px, 7vw, 58px);
     margin-bottom: 15px;
 }
 
 .hero p {
+    max-width: 650px;
+    margin: 0 auto 25px;
     font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 25px;
 }
 
 .button {
     display: inline-block;
-    background: #d9a653;
-    color: #17251c;
+    background: var(--gold);
+    color: #191919;
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 8px;
     font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 5px;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button.whatsapp {
+    background: #20b967;
+    color: white;
 }
 
 section {
-    padding: 50px 7%;
+    padding: 55px 7%;
 }
 
-.section-title {
+.title {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 12px;
-    color: #24372a;
+    color: var(--green);
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
 .subtitle {
@@ -103,86 +128,126 @@ section {
     background: white;
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 18px #00000012;
+    box-shadow: 0 5px 20px #00000010;
     border: 1px solid #eee5d7;
-    text-align: center;
-    padding-bottom: 20px;
+    transition: .2s;
 }
 
-.food {
-    height: 135px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1e6d3;
-    font-size: 65px;
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 17px;
 }
 
 .card h3 {
-    margin-top: 15px;
     font-size: 21px;
+    color: var(--green);
 }
 
 .card p {
     color: #777;
-    padding: 0 12px;
+    font-size: 14px;
+    margin: 5px 0 12px;
 }
 
 .price {
-    display: block;
-    margin-top: 8px;
-    color: #a66d1d;
+    color: #a36b15;
     font-weight: bold;
+    font-size: 17px;
+}
+
+.order {
+    display: block;
+    background: var(--green);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 9px;
+    border-radius: 7px;
+    margin-top: 13px;
 }
 
 .about {
-    background: #f0e7d8;
+    background: #eee6d7;
     text-align: center;
 }
 
 .about p {
     max-width: 700px;
-    margin: 15px auto 0;
+    margin: 15px auto;
 }
 
 .contact {
     text-align: center;
 }
 
-.contact p {
-    margin: 10px 0 20px;
+.contact-box {
+    background: white;
+    max-width: 550px;
+    padding: 25px;
+    margin: 25px auto 0;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+.contact-box p {
+    margin: 8px;
 }
 
 footer {
-    background: #17251c;
+    background: var(--dark);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 22px;
 }
 
-@media (max-width: 500px) {
+footer span {
+    color: var(--gold);
+}
+
+.floating {
+    position: fixed;
+    bottom: 18px;
+    left: 18px;
+    z-index: 10;
+    background: #20b967;
+    color: white;
+    padding: 12px 17px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px #0004;
+}
+
+@media(max-width:600px) {
     header {
         justify-content: center;
         text-align: center;
     }
 
     nav {
-        width: 100%;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 4px;
-        font-size: 14px;
+        justify-content: center;
     }
 
     .hero {
-        min-height: 350px;
-        padding: 50px 18px;
+        padding: 75px 18px;
     }
 
     section {
-        padding: 38px 18px;
+        padding: 40px 18px;
+    }
+
+    .title {
+        font-size: 27px;
     }
 }
 </style>
@@ -195,46 +260,102 @@ footer {
     <nav>
         <a href="#home">الرئيسية</a>
         <a href="#menu">قائمة الطعام</a>
-        <a href="#about">من نحن</a>
-        <a href="#contact">تواصل معنا</a>
+        <a href="#about">عن المطعم</a>
+        <a href="#contact">التواصل</a>
     </nav>
 </header>
 
 <main>
-<section class="hero" id="home">
-    <h1>أهلاً بكم في مطعم السعودي</h1>
-    <p>نكهة أصيلة، مذاق لا يُنسى، وتجربة طعام تجمع بين الجودة والكرم.</p>
-    <a class="button" href="#menu">اكتشف قائمة الطعام</a>
-</section>
+
+<div class="hero" id="home">
+    <h1>مطعم السعودي</h1>
+    <p>
+        مرحباً بكم في عالم النكهة السودانية الأصيلة!
+        وجبات شعبية شهية، مذاق مميز، وخدمة نهتم بها.
+    </p>
+    <a href="#menu" class="button">🍛 اكتشف قائمة الطعام</a>
+    <a href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20وجبة"
+       class="button whatsapp">اطلب عبر واتساب</a>
+</div>
 
 <section id="menu">
-    <h2 class="section-title">🍴 قائمة الطعام</h2>
-    <p class="subtitle">اكتشف بعض أطباقنا المميزة</p>
+    <h2 class="title">🍲 قائمة الطعام</h2>
+    <p class="subtitle">
+        أكلات سودانية شعبية بطعم البيت السوداني
+    </p>
 
     <div class="menu">
 
         <article class="card">
-            <div class="food">🍗</div>
-            <h3>دجاج مشوي</h3>
-            <p>دجاج متبل بتوابل مميزة ومشوي بعناية.</p>
-            <span class="price">السعر: يُحدد عند الطلب</span>
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                 alt="وجبة شعبية" loading="lazy">
+            <div class="card-content">
+                <h3>فتة بوش</h3>
+                <p>وجبة شعبية لذيذة لمحبي المذاق السوداني.</p>
+                <div class="price">3,000 جنيه سوداني</div>
+                <a class="order" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20فتة%20بوش">
+                    اطلب الوجبة
+                </a>
+            </div>
         </article>
 
         <article class="card">
-            <div class="food">🍚</div>
-            <h3>كبسة لحم</h3>
-            <p>أرز متبل مع اللحم ونكهة عربية أصيلة.</p>
-            <span class="price">السعر: يُحدد عند الطلب</span>
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                 alt="طبق عدس" loading="lazy">
+            <div class="card-content">
+                <h3>عدس</h3>
+                <p>عدس دافئ وشهي مناسب للإفطار والعشاء.</p>
+                <div class="price">2,000 جنيه سوداني</div>
+                <a class="order" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20عدس">
+                    اطلب الوجبة
+                </a>
+            </div>
         </article>
 
         <article class="card">
-            <div class="food">🍔</div>
-            <h3>برجر</h3>
-            <p>وجبة شهية بمكونات مختارة بعناية.</p>
-            <span class="price">السعر: يُحدد عند الطلب</span>
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80"
+                 alt="فول للإفطار" loading="lazy">
+            <div class="card-content">
+                <h3>فول سوداني</h3>
+                <p>وجبة فول شعبية للإفطار بمذاق شهي.</p>
+                <div class="price">2,500 جنيه سوداني</div>
+                <a class="order" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20فول">
+                    اطلب الوجبة
+                </a>
+            </div>
         </article>
 
         <article class="card">
-            <div class="food">🍟</div>
-            <h3>بطاطس مقلية</h3>
-            <p>بطاطس ذهبية وم
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80"
+                 alt="طعمية" loading="lazy">
+            <div class="card-content">
+                <h3>طعمية</h3>
+                <p>طعمية مقرمشة تناسب وجبتك الصباحية.</p>
+                <div class="price">2,000 جنيه سوداني</div>
+                <a class="order" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20طعمية">
+                    اطلب الوجبة
+                </a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                 alt="وجبة فاصوليا" loading="lazy">
+            <div class="card-content">
+                <h3>فاصوليا</h3>
+                <p>وجبة شعبية مشبعة بطعم غني.</p>
+                <div class="price">3,000 جنيه سوداني</div>
+                <a class="order" href="https://wa.me/249962037599?text=السلام%20عليكم،%20أريد%20طلب%20فاصوليا">
+                    اطلب الوجبة
+                </a>
+            </div>
+        </article>
+
+        <article class="card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=700&q=80"
+                 alt="وجبة مشكلة" loading="lazy">
+            <div class="card-content">
+                <h3>وجبة حسب الطلب</h3>
+                <p>تواصل معنا للاستفسار عن الوجبات المتوفرة.</p>
+                <div class="price">حتى 6,000 جنيه</div>
+                <a class="order" href
